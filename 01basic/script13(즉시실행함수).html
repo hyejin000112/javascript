@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){
+            alert("실행");
+        })();
+
+        function test1(){
+            console.log("test1함수");
+        }
+
+        
+        function test2(){
+            console.log("test2함수");
+        }
+        
+        (function test3(a,b,c){
+            console.log(a,b,c);
+            test1();
+            test2();
+        })(1,2,3);
+    </script>
+</body>
+</html>

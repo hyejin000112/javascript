@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        func1();      //호출가능  
+        func2();      //호출가능
+        //a(); 변수에 함수를 저장하면 익명 함수처럼 먼저 실행하지 못함.
+        function func1(){
+            console.log("func1실행");
+        }   
+        function func2(){
+            console.log("func2실행");
+        }
+        var a = func2;
+        console.log(a);
+        a();
+
+        //익명함수 - 변수에 함수를 저장하여, 마치 함수처럼 쓰도록 만들어줍니다.(단, 익명함수는 선언 이후에 호출되어야 합니다.)
+        var b = function(){
+            console.log("func실행 (익명함수)");
+        }
+
+        b();
+    </script>
+</body>
+</html>
