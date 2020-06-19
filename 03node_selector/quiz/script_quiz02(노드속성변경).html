@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src ="../img/1.jpg" width="200" class="img1" style="border:3px solid black;"> 
+    <section class="section1">
+        <select id ="select1">
+            <option value="../img/1.jpg">봄</option>
+            <option value="../img/2.jpg">여름</option>
+            <option value="../img/3.jpg">가을</option>
+            <option value="../img/4.jpg">겨울</option>
+        </select>
+        
+        
+        <input type="color" class="input1">
+
+       
+    </section>
+    <script>
+        var select1 = document.querySelector("#select1");
+        var input1 = document.querySelector(".input1");
+        var img1 = document.querySelector(".img1");
+
+        select1.addEventListener("change",function(){
+           
+            img1.src = select1.value;
+            
+        })
+
+        input1.addEventListener("change",function(){
+            img1.style.border = "5px solid "+input1.value;
+        })
+    </script>
+</body>
+</html>

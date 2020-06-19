@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--태그에 직접 자바스크립트를 실행하는 형태 - 인라인이벤트-->
+    <a href="#" onmouseover ="mouseover(this)">11111111</a>
+    <a href="#" onmouseout = "mouseout(this)">22222222</a>
+    <br>
+    <a href = "#" id ="m_over1">event2</a>
+    <a href = "#" id ="m_out1">event2</a>
+
+    <br>
+    <br>
+    <div>
+        <h1>event3(표준이벤트</h1>
+        <a href ="#" id ="ev3_mover">Event3  mouseover</a>
+        <a href ="#" id ="ev3_mout">Event3  mouseout</a>
+    </div>
+    <script>
+        
+
+
+        function mouseover(a){
+            var text = a.innerHTML;
+            a.innerHTML = "마우스 오버되었습니다";
+        }
+        function mouseout(a){
+            a.innerHTML = "마우스아웃되었습니다";
+        }
+        
+
+
+        
+        var m_over1 = document.getElementById("m_over1");
+        var m_out1 = document.getElementById("m_out1");
+
+        m_over1.onmouseover = function(){
+            alert("마우스 오버되었습니다");
+        }
+        m_out1.onmouseout = function(){
+            alert("마우스 아웃되었습니다.");
+        }
+
+        //event3
+        var ev3_mover =document.getElementById("ev3_mover");
+        var ev3_mout = document.getElementById("ev3_mout");
+
+        ev3_mover.addEventListener("mouseover",over);
+        ev3_mout.addEventListener("mouseout",out);
+
+
+        function over(){
+            setTimeout(function(){
+                alert("마우스 오버되었습니다.")},3000);
+           
+           
+        }
+        function out(a){
+
+        }
+
+    </script>
+</body>
+</html>

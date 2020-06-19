@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        header{
+            text-align:center;
+            padding:10px;
+            margin:10px;
+            border-bottom: 3px solid black;
+        }
+       
+       
+       section{
+            margin:0 auto;
+            width:50%;
+            
+       }
+        .content{
+            
+            overflow: hidden;
+            padding:10px;
+            border:1px solid black;
+            
+        }
+        .content .img{
+            float:left;
+            width:50%;
+            
+            display: block;
+            border:1px solid black;
+        }
+        .content img{
+            width:100%;
+        }
+        .p{
+            float: right;
+            border:1px solid black;
+            width:48%;
+            padding-bottom:95px;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <header class="border">
+        <h2 class="text">야간모드</h2>
+        <button type="button" id ="btn1">어둡게</button>
+        <button type="button" id ="btn2">밝게</button>
+    </header>
+    <section>
+        <div class="content border">
+            <div class="img border">
+            <img src ="../img/profile.png"/>
+            </div>
+            <div class="p text border">
+                <p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 
+                이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의
+                내장 객체에도 접그할 수 있는 기능을 가지고 있다.
+                </p>
+                <br>
+            <a class="text" href ="#">위키백과</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        var body = document.querySelector("body");
+        var btn1 = document.querySelector("#btn1");
+        var btn2 = document.querySelector("#btn2");
+        var text = document.querySelectorAll(".text");
+        var border = document.querySelectorAll(".border");
+        btn1.onclick = function(){
+            body.style.backgroundColor="#333";
+            
+            for(var i=0; i< text.length; i++){
+                text[i].style.color="#fff";
+            }  
+            for(var i=0; i<border.length; i++){
+                border[i].style.borderColor ="#fff";
+            }
+        }
+
+        
+
+        btn2.onclick = function(){
+            body.style.backgroundColor="#fff";
+            for(var i=0; i< text.length; i++){
+                text[i].style.color="#000";
+            }  
+            for(var i=0; i<border.length; i++){
+                border[i].style.borderColor ="#000";
+            }
+        }
+        
+    </script>
+</body>
+</html>
