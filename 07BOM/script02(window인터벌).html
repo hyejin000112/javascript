@@ -9,15 +9,24 @@
     <button type ="button" class="stopInterval">스탑</button>
     <script>
         //setInterval(실행함수, 인터벌시간) - 일정 시간마다 반복실행
-        function test(){
-           console.log("setInterval함수 실행");
-        }
-        var stop = setInterval(test, 1000);
+        // function test(){
+        //    console.log("setInterval함수 실행");
+        // }
+        // var stop = setInterval(test, 1000);
 
-        var stopInterval = document.querySelector(".stopInterval");
-        stopInterval.onclick = function(){
-            clearInterval(stop);
+        // var stopInterval = document.querySelector(".stopInterval");
+        // stopInterval.onclick = function(){
+        //     clearInterval(stop);
+        // }
+
+        //매개변수를 time 함수에 전달하고 싶다면..?
+        function test(text) {
+            var temp = text;
+            return function() {
+                alert(temp);
+            }
         }
+        setTimeout(test(1),5000);
     </script>
 
 

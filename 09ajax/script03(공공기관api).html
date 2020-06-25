@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //navigator.geolocation.getCurrentPosition(function(){},function(){});
+                                                 //성공함수   , 실패함수
+       /*  var lat;
+        var lng;
+        navigator.geolocation.getCurrentPosition(function(position){
+            console.log(position);
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+
+            console.log(lat,lng);
+
+        },function(){
+            alert("실패");
+        }); */
+
+
+        function ajax(position){
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+
+            console.log(position.coords.latitude);
+            console.log(position.coords.Iongitude);
+            fetch(`https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByGeo/json?lat=${lat}&lng=${lng}&m=5000`).then(function(response){
+            console.log(response);
+
+                if(response.status !== 200){
+                    alert("서버상의 문제가 발생했습니다");
+                    return;
+                }else{
+                    return response.json();
+                }
+
+                
+            }).then(function(jsonData){
+                console.log(jsonData);
+            })
+
+        }
+
+        function coorFail(){
+
+        }
+
+        (function(){
+            navigator.geolocation.getCurrentPosition(ajax, coorFail);
+        })();
+
+    </script>
+</body>
+</html>
